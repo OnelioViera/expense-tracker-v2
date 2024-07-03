@@ -44,7 +44,9 @@ const SideNav = () => {
   ]
 
   return (
-    <div className='h-screen p-5 border-r shadow-sm'>
+
+      
+      <div className='h-screen p-5 border-r shadow-sm'>
       <Image
         src='/logo-1.svg'
         alt='logo'
@@ -53,10 +55,10 @@ const SideNav = () => {
       <div className='mt-5'>
         {menuList.map((menu) => (
           <Link href={menu.path}>
-          <h2 className={`flex gap-2 item-center text-gray-500 font-medium p-5 cursor-pointer rounded-md hover:text-primary hover:bg-blue-100${path === menu.path && 'text-primary bg-blue-100'}`}>
-            <menu.icon />
-            {menu.name}
-          </h2>
+            <h2 className={`flex gap-2 item-center text-gray-500 mb-2 font-medium p-5 cursor-pointer rounded-md hover:text-primary hover:bg-blue-100${path === menu.path && 'text-primary bg-blue-100'}`}>
+              <menu.icon />
+              {menu.name}
+            </h2>
           </Link>
         ))}
       </div>
