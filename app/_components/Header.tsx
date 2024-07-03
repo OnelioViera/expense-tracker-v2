@@ -1,10 +1,15 @@
+'use client'
+
 import React from 'react'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
-import { Sign } from 'crypto'
-import { SignedIn, SignIn, UserButton } from '@clerk/nextjs'
+import { UserButton, useUser } from '@clerk/nextjs'
+import Link from 'next/link'
 
 const Header = () => {
+
+  const { user, isSignedIn } = useUser();
+
   return (
     <div className='flex items-center justify-between boader shadow-sm p-5'>
       <Image
@@ -13,12 +18,12 @@ const Header = () => {
         height={80}
         width={80}
       />
-      <a
-        className="block w-full rounded bg-primary px-12 py-3 text-sm font-medium text-white shadow hover:bg-blue-700 focus:outline-none focus:ring active:bg-red-500 sm:w-auto"
-        href="/sign-in"
-      >
-        Get Started
-      </a>
+      {isSignedIn ?
+        <UserButton /> :
+        <Link href={'/sign-in'}>
+          <Button>Get Started</Button>
+        </Link>
+      }
     </div>
   )
 }

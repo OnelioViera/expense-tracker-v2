@@ -20,9 +20,7 @@ export default function RootLayout({
       <html lang="en">
         <body>
           <header>
-            <SignedIn>
-              <UserButton />
-            </SignedIn>
+ 
 
           </header>
           <main>{children}</main>
