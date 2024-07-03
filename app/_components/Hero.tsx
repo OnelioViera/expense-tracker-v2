@@ -4,7 +4,7 @@ import Image from 'next/image'
 const Hero = () => {
   return (
 <section className="bg-gray-50 flex items-center flex-col">
-  <div className="mx-auto max-w-screen-xl px-4 py-20 lg:py-10 lg:flex">
+  <div className="mx-auto max-w-screen-xl px-4 py-12 lg:py-10 lg:flex">
     <div className="mx-auto max-w-xl text-center justify-center">
       <h1 className="text-center justify-center text-3xl font-extrabold lg:text-5xl">
         Manage Your Expenses
@@ -15,7 +15,7 @@ const Hero = () => {
         Start Creating your budget and save tons of mmoney
       </p>
 
-      <div className="mt-8 lg:mt-8 flex flex-wrap justify-center gap-4">
+      <div className="my-8 lg:mt-8 flex flex-wrap justify-center gap-4">
         <a
           className="block w-full rounded bg-primary px-12 py-3 text-sm font-medium text-white shadow hover:bg-blue-700 focus:outline-none focus:ring active:bg-red-500 sm:w-auto"
           href="/sign-in"
