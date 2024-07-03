@@ -30,7 +30,7 @@ const Hero = () => {
         alt="hero"
         width={1000}
         height={1000}
-      className='-mt-9 lg:mt-4 rounded-xl border-2'
+      className='-mt-9 rounded-xl border-2'
       />
 </section>
   )
