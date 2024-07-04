@@ -28,8 +28,8 @@ const Hero = () => {
       <Image
         src="/2799915.png"
         alt="hero"
-        width={1000}
-        height={1000}
+        width={800}
+        height={800}
       className='-mt-9 rounded-xl border-2'
       />
 </section>
