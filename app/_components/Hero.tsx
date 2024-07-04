@@ -26,7 +26,7 @@ const Hero = () => {
     </div>
       </div>
       <Image
-        src="/dashboard.png"
+        src="/2799915.png"
         alt="hero"
         width={1000}
         height={1000}
