@@ -3,8 +3,10 @@
 import React from 'react'
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
+  DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -30,16 +32,16 @@ const CreateBudget = () => {
   const { user } = useUser();
 
   // Used to create new budget
-  const onCreaterBudget = async (p0: { name: string; amount: string; emojiIcon: string }) => { 
+  const onCreaterBudget = async (p0: { name: string; amount: string; emojiIcon: string }) => {
     const result = await db.insert(Budgets)
-    .values({
-      name: name,
-      amount: amount,
-      createdBy: 'user?.primaryEmailAddress?.emailAddress',
-      icon: emojiIcon,
-    }).returning({ insertedId: Budgets.id })
-    
-    if(result) {
+      .values({
+        name: name,
+        amount: amount,
+        createdBy: 'user?.primaryEmailAddress?.emailAddress',
+        icon: emojiIcon,
+      }).returning({ insertedId: Budgets.id })
+
+    if (result) {
       toast('New Budget Created!')
       return
     }
@@ -87,13 +89,20 @@ const CreateBudget = () => {
                     placeholder="e.g. 5000"
                     onChange={(e) => setAmount(e.target.value)} />
                 </div>
-                <Button
-                  disabled={!(name && amount)}
-                  onClick={() => onCreaterBudget({ name, amount, emojiIcon })}
-                  className='mt-5 w-full'>Create Budget</Button>
+
               </div>
             </DialogDescription>
           </DialogHeader>
+
+          <DialogFooter className="sm:justify-start">
+            <DialogClose asChild>
+              <Button
+                disabled={!(name && amount)}
+                onClick={() => onCreaterBudget({ name, amount, emojiIcon })}
+                className='mt-5 w-full'>Create Budget</Button>
+            </DialogClose>
+          </DialogFooter>
+
         </DialogContent>
       </Dialog>
 
